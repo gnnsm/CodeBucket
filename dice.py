@@ -2,10 +2,10 @@ import re
 import random
 
 
-def calculate(number, dice, append):
+def calculate(number, dice_cube, append):
     result = 0
     while number > 0:
-        throwing = random.randint(1, dice)
+        throwing = random.randint(1, dice_cube)
         result += throwing
         # print(f'Dice #{number}: {throwing}')
         number -= 1
@@ -28,7 +28,7 @@ def dice(command: str):
         else:
             number = int(split_d[0])
         die = int(split_d[1])
-        return calculate(number, die, append)
+        return calculate(number, dice_cube, append)
 
 
 if __name__ == "__main__":
